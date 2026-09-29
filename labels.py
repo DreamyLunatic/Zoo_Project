@@ -1,7 +1,7 @@
 import tkinter as tk
 import math
 
-class LabeleOperations:
+class LableOperations:
     @staticmethod
     def create_set_of_labeles(window :tk.Label, names, font, size) -> list:
         labels = []
