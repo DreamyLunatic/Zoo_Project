@@ -1,9 +1,9 @@
 import tkinter as tk
 import math
 
-class LableOperations:
+class LabelOperations:
     @staticmethod
-    def create_set_of_labeles(window :tk.Label, names, font, size) -> list:
+    def create_set_of_labels(window :tk.Label, names, font, size) -> list:
         labels = []
 
         for animal in enumerate(names):
