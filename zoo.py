@@ -1,6 +1,6 @@
 import tkinter as tk
 import ttkbootstrap as ttk
-from labelsimages import LabelesAndImages
+from labels import LabelOperations
 from PIL import Image, ImageTk, ImageFile
 
 ROOT_SCREEN_X = 1280
@@ -53,12 +53,12 @@ class App(ttk.Window):
 
         animal_names = [str(animal) for animal in animals.keys()]
 
-        self.animal_labels :tk.Widget = LabelesAndImages.create_set_of_labeles(window=self, names=animal_names, font='Bahnschrift', size=12)
+        self.animal_labels :tk.Widget = LabelOperations.create_set_of_labels(window=self, names=animal_names, font='Bahnschrift', size=12)
 
         for label in self.animal_labels:
             label.bind("<Enter>", lambda event, : self.show_image_by_label(event=event, images=animals, scale=IMAGE_SIZE))
 
-        LabelesAndImages.place_around(widgets=self.animal_labels, radius=RADIUS_FROM_BUTTON, x=BUTTON_POS_X, y=BUTTON_POS_Y)
+        LabelOperations.place_around(widgets=self.animal_labels, radius=RADIUS_FROM_BUTTON, x=BUTTON_POS_X, y=BUTTON_POS_Y)
 
     # Animation loop
     def show_image(self, imageCanvas :tk.Canvas, image :Image, imageid :int, startValue, scale :int, animation_time :int):
